@@ -20,12 +20,12 @@ def create_heatmap_without_formatting(
         go.Heatmap(
             x=weeknumber_of_dates,
             y=weekdays_in_year,
-            z=data[y],
+            z=list(data['hourswork'])
             xgap=gap,  # this
             ygap=gap,  # and this is used to make the grid-like apperance
             showscale=False,
             colorscale=colorscale,  # user can setup their colorscale
-            hovertemplate="%{customdata[0]} <br>%{customdata[1]}=%{z} <br>Week=%{x}",
+            hovertemplate="%{customdata[0]} <br>Week=%{x} <br>Test=%{z}",
             customdata=np.stack((data[x].astype(str), [name] * data.shape[0]), axis=-1),
             name=str(year),
         )
