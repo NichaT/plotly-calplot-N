@@ -19,7 +19,7 @@ def create_heatmap_without_formatting(
     raw_heatmap = [
         go.Heatmap(
             x=weeknumber_of_dates,
-            y=weekdays_in_year,
+            y=weekdays_in_year, #test
             z=list(data['hourswork']),
             xgap=gap,  # this
             ygap=gap,  # and this is used to make the grid-like apperance
